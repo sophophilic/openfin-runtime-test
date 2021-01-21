@@ -1,0 +1,22 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "OpenFin Runtime Test",
+        "description": "OpenFin Runtime Test",
+        "url": "http://localhost:8000/index.html",
+        "uuid": "openfin",
+        "autoShow": true,
+        "defaultWidth": 850,
+        "defaultHeight": 500,
+        "saveWindowState": false,
+        "defaultCentered": true,
+        "icon": "http://localhost:8000/favicon.ico"
+    },
+    "runtime": {
+        "arguments": "",
+        "version": "stable"
+    },
+    "shortcut": {
+        "target": []
+    }
+}
