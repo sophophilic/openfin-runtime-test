@@ -1,22 +1,67 @@
 {
+    "licenseKey": "6417f37a-992a-46b2-9e05-4d5d936ab1a1",
     "devtools_port": 9090,
     "startup_app": {
         "name": "OpenFin Runtime Test",
-        "description": "OpenFin Runtime Test",
-        "url": "http://localhost:8000/index.html",
-        "uuid": "openfin",
+        "description": "Fixed Income Matrix",
+        "url": "http://localhost:4200",
+        "icon": "http://localhost:4200/assets/openfin.ico",
+        "taskbarIcon": "http://localhost:4200/assets/openfin.png",
+        "uuid": "openfin-runtime-test",
         "autoShow": true,
-        "defaultWidth": 850,
-        "defaultHeight": 500,
-        "saveWindowState": false,
-        "defaultCentered": true,
-        "icon": "http://localhost:8000/favicon.ico"
+        "backgroundColor": "#14151A",
+        "saveWindowState": true,
+        "defaultWidth": 1024,
+        "defaultHeight": 768,
+        "plugins": true,
+        "contextMenu": true,
+        "enableAppLogging": true,
+        "waitForPageLoad": false,
+        "logManagement": {
+            "enabled": true
+        },
+        "minimumRVMVersion": "4.7.0.3",
+        "permissions": {
+            "System": {
+                "launchExternalProcess": true,
+                "terminateExternalProcess": true,
+                "downloadAsset": true
+            }
+        }
     },
     "runtime": {
-        "arguments": "",
-        "version": "stable"
+        "arguments": "--security-realm=OPENFIN_RUNTIME_TEST --no-sandbox --enable-mesh",
+        "version": "12.69.43.21",
+        "fallbackVersion": "9.61.38.40",
+        "futureVersion": "15.80.50.34"
+    },
+    "contentNavigation": {
+        "whitelist": [
+            "http://*.localhost:4200/*"
+        ]
+    },
+    "dialogSettings": {
+        "bgColor": 4279703583,
+        "textColor": 4294901502,
+        "progressBarBgColor": 4279243028,
+        "progressBarFillColor": 4280654308,
+        "progressBarBorderColor": 4279111443
     },
     "shortcut": {
-        "target": []
+        "company": "Sample",
+        "description": "OpenFin Runtime Test",
+        "name": "OpenFin Runtime Test",
+        "icon": "http://localhost:4200/assets/openfin.ico",
+        "target": [
+            "desktop",
+            "start-menu"
+        ],
+        "diagnostics-shortcut": false,
+        "force": true
+    },
+    "supportInformation": {
+        "company": "Sample",
+        "product": "OpenFin Runtime Test",
+        "forwardErrorReports": false
     }
 }

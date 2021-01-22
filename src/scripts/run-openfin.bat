@@ -1,0 +1,1 @@
+call openfin --launch --config assets/app.json

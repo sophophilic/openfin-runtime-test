@@ -1,0 +1,166 @@
+{
+    "name": "test-layout",
+    "windows": [
+        {
+            "name": "cd0578ad-0345",
+            "id": "cd0578ad-0345",
+            "main": false,
+            "options": {
+                "accelerator": {
+                    "devtools": false,
+                    "zoom": false,
+                    "reload": false,
+                    "reloadIgnoringCache": false
+                },
+                "alphaMask": {
+                    "blue": 50,
+                    "green": 50,
+                    "red": 50
+                },
+                "alwaysOnBottom": false,
+                "alwaysOnTop": false,
+                "api": {
+                    "iframe": {
+                        "crossOriginInjection": true,
+                        "sameOriginInjection": true,
+                        "enableDeprecatedSharedName": false
+                    }
+                },
+                "applicationIcon": "",
+                "aspectRatio": 0,
+                "autoShow": false,
+                "backgroundThrottling": false,
+                "contextMenuSettings": {
+                    "enable": true,
+                    "devtools": true,
+                    "reload": true
+                },
+                "cornerRounding": {
+                    "height": 0,
+                    "width": 0
+                },
+                "defaultCentered": false,
+                "defaultHeight": 1,
+                "defaultLeft": -10000,
+                "defaultTop": -10000,
+                "defaultWidth": 1,
+                "delay_connection": false,
+                "disableIabSecureLogging": false,
+                "draggable": false,
+                "exitOnClose": false,
+                "experimental": {
+                    "api": {
+                        "batching": {
+                            "renderer": {
+                                "enabled": false,
+                                "maxSize": 1.7976931348623157E308,
+                                "ttl": 0
+                            }
+                        },
+                        "breadcrumbs": false,
+                        "iframe": {
+                            "crossOriginInjection": true,
+                            "sameOriginInjection": true,
+                            "enableDeprecatedSharedName": false
+                        }
+                    },
+                    "disableInitialReload": false,
+                    "node": false,
+                    "v2Api": true
+                },
+                "frame": true,
+                "frameConnect": "last",
+                "hideOnBlur": false,
+                "hideOnClose": false,
+                "hideWhileChildrenVisible": false,
+                "isRawWindowOpen": false,
+                "launchExternal": "",
+                "loadErrorMessage": "",
+                "maxHeight": -1,
+                "maxWidth": -1,
+                "maximizable": true,
+                "minHeight": 0,
+                "minWidth": 0,
+                "minimizable": true,
+                "name": "cd0578ad-0345",
+                "opacity": 1,
+                "plugins": false,
+                "resizable": true,
+                "resize": true,
+                "resizeRegion": {
+                    "bottomRightCorner": 9,
+                    "size": 7,
+                    "sides": {
+                        "top": true,
+                        "right": true,
+                        "bottom": true,
+                        "left": true
+                    }
+                },
+                "saveWindowState": false,
+                "shadow": false,
+                "showTaskbarIcon": true,
+                "smallWindow": false,
+                "spellCheck": false,
+                "state": "normal",
+                "taskbarIcon": "",
+                "taskbarIconGroup": "openfin-runtime-test",
+                "transparent": false,
+                "uuid": "openfin-runtime-test",
+                "waitForPageLoad": true,
+                "backgroundColor": "#14151A",
+                "webSecurity": true,
+                "skipTaskbar": false,
+                "title": "cd0578ad-0345",
+                "height": 268,
+                "width": 307,
+                "center": false,
+                "x": 574,
+                "y": 373,
+                "enableLargerThanScreen": true,
+                "enable-plugins": true,
+                "webPreferences": {
+                    "api": {
+                        "batching": {
+                            "renderer": {
+                                "enabled": false,
+                                "maxSize": 1.7976931348623157E308,
+                                "ttl": 0
+                            }
+                        },
+                        "breadcrumbs": false,
+                        "iframe": {
+                            "crossOriginInjection": true,
+                            "sameOriginInjection": true,
+                            "enableDeprecatedSharedName": false
+                        }
+                    },
+                    "contextMenuSettings": {
+                        "enable": true,
+                        "devtools": true,
+                        "reload": true
+                    },
+                    "disableInitialReload": false,
+                    "nodeIntegration": false,
+                    "plugins": false,
+                    "preload": "C:\\Users\\Administrator\\AppData\\Local\\OpenFin\\runtime\\12.69.43.21\\OpenFin\\resources\\app.asar\\src\\renderer\\node-less.js",
+                    "sandbox": true,
+                    "spellCheck": false,
+                    "backgroundThrottling": false
+                },
+                "customData": "{\"state\":\"normal\"}",
+                "hasLoaded": false
+            },
+            "state": {
+                "title": "Window 1",
+                "body": "Hi There !!"
+            },
+            "bounds": {
+                "x": 574,
+                "y": 373,
+                "width": 307,
+                "height": 268
+            }
+        }
+    ]
+}

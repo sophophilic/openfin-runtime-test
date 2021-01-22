@@ -1,16 +1,19 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { Container, resolveContainer } from '@morgan-stanley/desktopjs';
 
 import { AppComponent } from './app.component';
 import { containerResolver } from './container-resolver/container-resolver';
+import { AppResource } from './app.resource';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     {
@@ -23,7 +26,8 @@ import { containerResolver } from './container-resolver/container-resolver';
     {
       provide: Container,
       useFactory: () => resolveContainer()
-    }
+    },
+    AppResource
   ],
   bootstrap: [AppComponent]
 })

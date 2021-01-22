@@ -1,4 +1,4 @@
-import { Default } from "@morgan-stanley/desktopjs";
+import { ContainerWindow, Default } from "@morgan-stanley/desktopjs";
 
 export class WebContainer extends Default.DefaultContainer {
     constructor() {

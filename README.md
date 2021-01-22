@@ -1,10 +1,25 @@
 # OpenfinRuntimeTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.0.
+This project is intended to test OpenFin Runtime features and identify issues during the runtime upgrades
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Run openfin app for testing runtime
+
+Open 2 terminals/cmd instance
+1. on first one, run `npm start`. It should start the local development server and `http://localhost:4200` should be accessible.
+````
+path should be ~\openfin-runtime-test\ before running npm start
+````
+2. On Second terminal/command prompt - 
+````
+path should be ~\openfin-runtime-test\ before running the below commands
+cd src
+scripts\run-openfin.bat
+````
 
 ## Code scaffolding
 
