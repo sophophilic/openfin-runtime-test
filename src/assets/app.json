@@ -31,9 +31,9 @@
     },
     "runtime": {
         "arguments": "--security-realm=OPENFIN_RUNTIME_TEST --no-sandbox --enable-mesh",
-        "version": "12.69.43.21",
-        "fallbackVersion": "9.61.38.40",
-        "futureVersion": "15.80.50.34"
+        "version": "17.85.54.32",
+        "fallbackVersion": "12.69.43.21",
+        "futureVersion": "18.87.56.37"
     },
     "contentNavigation": {
         "whitelist": [

@@ -6,6 +6,7 @@ import { Container, resolveContainer } from '@morgan-stanley/desktopjs';
 import { AppComponent } from './app.component';
 import { containerResolver } from './container-resolver/container-resolver';
 import { AppResource } from './app.resource';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AppResource } from './app.resource';
       provide: Container,
       useFactory: () => resolveContainer()
     },
-    AppResource
+    AppResource,
+    AppService
   ],
   bootstrap: [AppComponent]
 })

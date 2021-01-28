@@ -3,6 +3,7 @@ import { Container, ContainerEventArgs, ContainerWindow, PersistedWindow, Persis
 import { from } from 'rxjs';
 import { delay, filter, map, switchMap, take, tap } from 'rxjs/operators';
 import { AppResource } from './app.resource';
+import { AppService } from './app.service';
 import { DesktopOpenFinContainerWindow } from './containers/openfin-container-window';
 
 @Component({
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit {
   title = 'openfin-runtime-test';
   constructor(
     private container: Container,
-    private appResource: AppResource
+    private appResource: AppResource,
+    private appService: AppService
     ) {
 
   }
@@ -24,12 +26,8 @@ export class AppComponent implements OnInit {
     // bringToFront on all windows
     // click to front startegy apply
     this.appResource.getDesktopLayoutJson().pipe(
+      filter(() => this.appService.isDesktopMode()),
       take(1),
-      map((layout: PersistedWindowLayout) => {
-        console.log(layout);
-        return layout;
-      }),
-      filter(() => this.isDesktopMode()),
       switchMap((layout: PersistedWindowLayout) => {
         return from(this.container.loadLayout(layout))
           .pipe(
@@ -37,36 +35,13 @@ export class AppComponent implements OnInit {
             tap(async(loadedLayout) => {
               for(let i = 0; i < loadedLayout.windows.length; i++) {
                 const win = loadedLayout.windows[i];
-                await this.setWindowState(win.name, win.state);
+                await this.appService.setWindowState(win.name, win.state);
               }
-              this.showDesktopWindows(loadedLayout.windows);
+              await this.appService.showDesktopWindows(loadedLayout.windows);
             })
           )
       })
     ).subscribe();
   }
 
-  private isDesktopMode() {
-    return /OpenFin/.test(window.navigator.userAgent);
-  }
-
-  private async showDesktopWindows(wins: PersistedWindow[]) {
-      if(wins && wins.length > 0) {
-        for(let i = 0; i < wins.length; i++) {
-          const containerWindow: ContainerWindow | null = await this.container.getWindowByName(wins[i].name);
-          if(containerWindow) {
-            containerWindow.show();
-          }
-        }
-      }
-  }
-
-  private async setWindowState(name: string, state: any) {
-    const containerWindow: DesktopOpenFinContainerWindow = <DesktopOpenFinContainerWindow>(await this.container.getWindowByName(name));
-    if(containerWindow) {
-      containerWindow.setState(state);
-      await containerWindow.setTitle(state.title);
-      await containerWindow.setContent(state.body);
-    }
-  }
 }
