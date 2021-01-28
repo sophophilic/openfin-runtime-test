@@ -4,6 +4,7 @@ import { ContainerWindow } from "@morgan-stanley/desktopjs";
 
 export class DesktopOpenFinContainer extends OpenFinContainer {
 
+    private stateMap: { [id: string]: any} = {};
     private mainWindow!: DesktopOpenFinContainerWindow;
     constructor(
         private desktop: any,
@@ -34,9 +35,10 @@ export class DesktopOpenFinContainer extends OpenFinContainer {
                 }
             }
         };
-        url = url || `about:blank`;
+        url = url || `/assets/blank.html`;
         return super.createWindow(url, options).then((containerWindow: ContainerWindow) => {
             console.log(`New window created with id - ${containerWindow.id}`);
+            this.addGetSetStateMethods(containerWindow);
             return containerWindow;
         }).catch(error => {
             console.error(`Unexpected error while creating new window - ${error}`);
@@ -57,5 +59,15 @@ export class DesktopOpenFinContainer extends OpenFinContainer {
         const wins = await this.getAllWindows();
         const win = wins.find(win => win.name === name);
         return win ? win : null;
+    }
+
+    private addGetSetStateMethods(containerWindow: ContainerWindow) {
+        (<any>containerWindow.nativeWindow).getState = () => {
+            return this.stateMap[containerWindow.id];
+        }
+
+        (<any>containerWindow.nativeWindow).setState = (state: any) => {
+            this.stateMap[containerWindow.id] = state;
+        }
     }
 }

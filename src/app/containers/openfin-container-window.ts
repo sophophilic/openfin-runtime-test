@@ -10,4 +10,24 @@ export class DesktopOpenFinContainerWindow extends OpenFinContainerWindow {
             this.innerWindow.setAsForeground(resolve, reject);
         })
     }
+
+    async setTitle(title: string) {
+        try {
+            this.nativeWindow.document.title = title;
+            return Promise.resolve();
+        } catch(err) {
+            throw new Error(err);
+        }
+    }
+
+    async setContent(content: string) {
+        try {
+            if(this.nativeWindow.document.body) {
+                this.nativeWindow.document.body.innerHTML = content;
+            }
+            return Promise.resolve();
+        } catch(err) {
+            throw new Error(err);
+        }
+    }
 }
