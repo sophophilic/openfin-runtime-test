@@ -20,12 +20,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.container);
-    // this.container.addListener('layout-loaded', (event: ContainerEventArgs)  => {
-    //   setTimeout(() => {
-    //     this.showDesktopWindows((event as any).layout.windows);
-    //   }, 2000);
-    // });
     //TODO:
     // bringToFront on all windows
     // click to front startegy apply
